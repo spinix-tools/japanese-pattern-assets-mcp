@@ -1,6 +1,6 @@
 {
   "catalog": "Japanese pattern and Japanese-themed assets for AI agents (Spinix Tools and other makers, link only)",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "checked": "2026-11-24",
   "maker": "spin xiv / Spinix Tools",
   "notes": [
@@ -506,6 +506,87 @@
       },
       "ai_use": {
         "statement": "Unknown: the page (published 2020-04-01) has no AI disclosure line."
+      },
+      "listing": "link only; files stay on the maker's page"
+    },
+    {
+      "id": "phantomlucy-stylized-japanese-textures",
+      "title": "Stylized Japanese Textures Pack",
+      "maker": "PhantomLucy",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "textures",
+        "seamless",
+        "4k",
+        "tatami",
+        "wood",
+        "roof",
+        "3d",
+        "unreal-engine"
+      ],
+      "uses": [
+        "background",
+        "3d"
+      ],
+      "formats": [
+        "TGA (base color, roughness, normal, height, ambient occlusion)"
+      ],
+      "contents": "11 seamless 4k textures: 1 roof, 3 wall, 2 ground, 1 tatami, 3 wood planks, 1 wood motif",
+      "price": {
+        "amount": 0,
+        "currency": "USD",
+        "note": "free on itch.io"
+      },
+      "store": "itch.io",
+      "url": "https://phantomlucy.itch.io/stylized-japanese-textures-pack",
+      "license": {
+        "summary": "\"If you use my texture pack, please credit me in your project.\" (page text). Commercial use is not stated.",
+        "commercial": null,
+        "credit_required": true,
+        "redistribute_files": null,
+        "source": "itch.io page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "all": "none",
+        "statement": "itch.io page shows: Content — No generative AI was used."
+      },
+      "listing": "link only; files stay on the maker's page"
+    },
+    {
+      "id": "puppetbomb-ui-wave",
+      "title": "UI Pack: Japanese Wave Pattern",
+      "maker": "puppetbomb",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "wave",
+        "ui",
+        "game-ui",
+        "2d",
+        "1440x900"
+      ],
+      "uses": [
+        "game-ui"
+      ],
+      "formats": [],
+      "contents": "16:10 (1440 x 900) UI pack: splash, load/save page, buttons, settings pop-up, dialog and selection UI",
+      "price": {
+        "amount": 0,
+        "currency": "USD",
+        "note": "free on itch.io"
+      },
+      "store": "itch.io",
+      "url": "https://puppetbomb.itch.io/ui-wave",
+      "license": {
+        "summary": "\"FOR NON-COMMERCIAL USE ONLY\" (page text).",
+        "commercial": false,
+        "credit_required": null,
+        "redistribute_files": null,
+        "source": "itch.io page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "statement": "Unknown: the page (published 2020-04-14) has no AI disclosure line."
       },
       "listing": "link only; files stay on the maker's page"
     }

@@ -39,7 +39,7 @@ async def main():
             res = payload(await s.call_tool("search_assets", {"query": "9-slice ui", "max_price_jpy": 0}))
             ids = [x["id"] for x in res]
             print("search free ui", ids)
-            ok &= ids == ["japanese-ui-frames-free"]
+            ok &= ids[0] == "japanese-ui-frames-free" and all(x != "japanese-ui-frames" for x in ids)
 
             res = payload(await s.call_tool("search_assets", {"query": "和柄", "no_ai_images": True}))
             print("search ja", [x["id"] for x in res])
@@ -56,11 +56,15 @@ async def main():
 
             res = payload(await s.call_tool("search_assets", {"query": "japanese textures", "no_ai_at_all": True}))
             print("no AI at all, textures", [x["id"] for x in res])
-            ok &= [x["id"] for x in res] == ["rekkimaru-japanese-textures-32"]
+            ok &= set(x["id"] for x in res) == {"rekkimaru-japanese-textures-32", "phantomlucy-stylized-japanese-textures"}
 
             lic2 = payload(await s.call_tool("get_license", {"asset_id": "paulbarden-japanese-themed-tilesets"}))
             print("CC-BY credit", lic2.get("credit_required"))
             ok &= lic2.get("credit_required") is True
+
+            res = payload(await s.call_tool("search_assets", {"query": "wave ui", "commercial_only": True}))
+            print("commercial wave ui", [x["id"] for x in res])
+            ok &= "puppetbomb-ui-wave" not in [x["id"] for x in res]
 
             lic = payload(await s.call_tool("get_license", {"asset_id": "wagara-pixel-sampler"}))
             print("license sampler", lic.get("warning"))

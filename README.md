@@ -4,7 +4,7 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.2.0 — catalog checked 2026-11-24. 11 items: 9 by Spinix Tools, and 2 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — one requires credit). Prices can change; the store page is always the source of truth.
+Version 0.2.1 — catalog checked 2026-11-24. 13 items: 9 by Spinix Tools, and 4 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
 
 ## Tools
 
@@ -20,7 +20,7 @@ Example prompts: "Find a seamless Japanese wave pattern I can use commercially, 
 ## Example
 
 Request to an agent: "I need Japanese-pattern UI frames for my Godot game. Commercial use, no AI-generated images."
-These are real calls to v0.2.0 (run on 2026-11-24); search results are shortened to a few fields.
+These are real calls to v0.2.0 (run on 2026-11-24; v0.2.1 adds two more items, so results can include them); search results are shortened to a few fields.
 
 1. `search_assets {"query": "japanese frame", "use": "game-ui", "commercial_only": true, "no_ai_images": true}`
    returns 5 items, free first:
