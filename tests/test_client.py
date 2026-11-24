@@ -98,8 +98,11 @@ async def main():
             ok &= "aetherdeck-sumie-kintsugi-card-frames" in ids_all and "aetherdeck-sumie-kintsugi-card-frames" not in ids_noai
 
             lic = payload(await s.call_tool("get_license", {"asset_id": "wagara-pixel-sampler"}))
-            print("license sampler", lic.get("warning"))
-            ok &= "warning" in lic
+            print("license sampler", lic.get("commercial"), lic.get("credit_required"), lic.get("warning"))
+            ok &= lic.get("commercial") is True and lic.get("credit_required") is False and "warning" not in lic
+            ids = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": "pixel-art", "commercial_only": True, "max_price_jpy": 0}))]
+            print("free commercial pixel", ids)
+            ok &= "wagara-pixel-sampler" in ids
 
             ai = payload(await s.call_tool("get_ai_use", {"asset_id": "wagara-tile-maker"}))
             print("ai tile maker", ai.get("image"), ai.get("code"))

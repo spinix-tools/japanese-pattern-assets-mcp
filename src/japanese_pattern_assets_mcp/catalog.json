@@ -54,7 +54,7 @@
         "commercial": true,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "itch.io project page, checked 2026-11-24"
+        "source": "itch.io project page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -117,7 +117,7 @@
         "commercial": true,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "itch.io project page, checked 2026-11-24"
+        "source": "itch.io project page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -161,11 +161,11 @@
       "store": "itch.io",
       "url": "https://spinxix.itch.io/wagara-tile-maker",
       "license": {
-        "summary": "Requires check: the itch.io page describes the free sampler but gives no license line for it (checked 2026-11-24). The README in the download was not opened.",
-        "commercial": null,
-        "credit_required": null,
-        "redistribute_files": null,
-        "source": "要確認"
+        "summary": "Free for personal and commercial use (games, apps, video, print). No credit needed. Please do not resell or redistribute the files themselves as an asset pack.",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "README.txt in the maker's own v1.1 ZIP (36,173 bytes; the itch upload is listed as 35 kB). The itch page itself has no license line for the sampler (checked 2026-11-25)."
       },
       "ai_use": {
         "image": "none",
