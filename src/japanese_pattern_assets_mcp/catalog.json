@@ -1,6 +1,6 @@
 {
   "catalog": "Japanese pattern and Japanese-themed assets for AI agents (Spinix Tools and other makers, link only)",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "checked": "2026-11-24",
   "maker": "spin xiv / Spinix Tools",
   "notes": [
@@ -587,6 +587,51 @@
       },
       "ai_use": {
         "statement": "Unknown: the page (published 2020-04-14) has no AI disclosure line."
+      },
+      "listing": "link only; files stay on the maker's page"
+    },
+    {
+      "id": "aetherdeck-sumie-kintsugi-card-frames",
+      "title": "Sumi-e Ink & Liquid Gold Kintsugi Anime Card Frames – 2D TCG UI Pack (free)",
+      "maker": "AetherDeck",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "sumi-e",
+        "kintsugi",
+        "card",
+        "frame",
+        "tcg",
+        "ui",
+        "game-ui",
+        "anime",
+        "png"
+      ],
+      "uses": [
+        "game-ui"
+      ],
+      "formats": [
+        "PNG (transparent)"
+      ],
+      "contents": "4 high-res PNGs: 3 transparent card frames and 1 card back (a larger paid bundle exists)",
+      "price": {
+        "amount": 0,
+        "currency": "USD",
+        "note": "free on itch.io"
+      },
+      "store": "itch.io",
+      "url": "https://aetherdeck.itch.io/free-sumi-e-ink-liquid-gold-kintsugi-anime-card-frames-2d-tcg-ui-pack",
+      "license": {
+        "summary": "\"100% Free for personal and commercial projects. Credit is appreciated\" (page text).",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": null,
+        "source": "itch.io page, checked 2026-11-25"
+      },
+      "ai_use": {
+        "image": "assist",
+        "statement": "itch.io page shows: AI Disclosure — AI Assisted, Graphics. How much AI was used is not stated.",
+        "itch_disclosure": "AI Assisted, Graphics"
       },
       "listing": "link only; files stay on the maker's page"
     }

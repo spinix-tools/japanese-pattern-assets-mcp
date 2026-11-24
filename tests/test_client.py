@@ -81,6 +81,11 @@ async def main():
             print("麻の葉 asset-pack", ids)
             ok &= "wagara-pattern-pack" in ids
 
+            ids_all = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": "card frame", "use": "game-ui"}))]
+            ids_noai = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": "card frame", "use": "game-ui", "no_ai_images": True}))]
+            print("card frame", ids_all[:3], "no AI images:", "aetherdeck-sumie-kintsugi-card-frames" in ids_noai)
+            ok &= "aetherdeck-sumie-kintsugi-card-frames" in ids_all and "aetherdeck-sumie-kintsugi-card-frames" not in ids_noai
+
             lic = payload(await s.call_tool("get_license", {"asset_id": "wagara-pixel-sampler"}))
             print("license sampler", lic.get("warning"))
             ok &= "warning" in lic
