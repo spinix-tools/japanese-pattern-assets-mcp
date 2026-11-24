@@ -4,7 +4,7 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.2.3 — catalog checked 2026-11-24. 13 items: 9 by Spinix Tools, and 4 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
+Version 0.2.4 — catalog checked 2026-11-24. 13 items: 9 by Spinix Tools, and 4 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
 
 ## Tools
 
@@ -12,7 +12,7 @@ All four tools are read-only (annotated `readOnlyHint: true`).
 
 | Tool | What it does |
 | --- | --- |
-| `search_assets` | Search by words (English or Japanese). Pattern names work in Japanese, romaji or English, e.g. 青海波 / seigaiha / wave, 麻の葉 / asanoha / hemp, 市松 / ichimatsu / checker. Filters: `kind` (tool / asset-pack / printable), `use` (game-ui, background, web, print, pixel-art, calendar, planner), `max_price_jpy` (0 = free only), `commercial_only`, `no_ai_images` (no image-generation AI), `no_ai_at_all` (no generative AI in any step). |
+| `search_assets` | Search by words (English or Japanese). Pattern names work in Japanese, romaji or English, e.g. 青海波 / seigaiha / wave, 麻の葉 / asanoha / hemp, 市松 / ichimatsu / checker. Each result has `matched`, showing which query words (and which other name) it matched. Filters: `kind` (tool / asset-pack / printable), `use` (game-ui, background, web, print, pixel-art, calendar, planner), `max_price_jpy` (0 = free only), `commercial_only`, `no_ai_images` (no image-generation AI), `no_ai_at_all` (no generative AI in any step). |
 | `get_license` | Commercial use, credit (and to whom), redistribution, and where the wording came from. Warns when a license still needs checking. |
 | `get_ai_use` | Generative AI use per step (`none` / `assist` / `mostly`), plus the maker's statement. Self-declaration, not proof. |
 | `get_link` | Store page, price, and how to get it. |

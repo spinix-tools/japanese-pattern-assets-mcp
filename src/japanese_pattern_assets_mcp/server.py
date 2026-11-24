@@ -135,12 +135,16 @@ def search_assets(
         if no_ai_at_all and not _no_ai_anywhere(a):
             continue
         hay = _haystack(a)
-        score = sum(1 for alts in _expand(words) if any(alt in hay for alt in alts))
-        if words and score == 0:
+        matched = []
+        for w, alts in zip(words, _expand(words)):
+            hit = next((alt for alt in sorted(alts) if alt in hay), None)
+            if hit:
+                matched.append(w if hit == w else f"{w} ({hit})")
+        if words and not matched:
             continue
-        scored.append((score, a))
-    scored.sort(key=lambda x: (-x[0], x[1]["price"]["amount"]))
-    return [_summary(a) for _, a in scored[: max(1, min(limit, 50))]]
+        scored.append((len(matched), matched, a))
+    scored.sort(key=lambda x: (-x[0], x[2]["price"]["amount"]))
+    return [dict(_summary(a), matched=m) for _, m, a in scored[: max(1, min(limit, 50))]]
 
 
 def _get(asset_id: str) -> dict:

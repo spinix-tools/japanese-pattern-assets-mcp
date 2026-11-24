@@ -74,6 +74,9 @@ async def main():
                 ids = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": q, "commercial_only": True}))]
                 print("pattern name", q, ids[:3])
                 ok &= "wagara-pattern-pack" in ids
+            res = payload(await s.call_tool("search_assets", {"query": "青海波"}))
+            print("matched", res[0]["id"], res[0].get("matched"))
+            ok &= res[0].get("matched") and res[0]["matched"][0].startswith("青海波 (")
             ids = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": "麻の葉", "kind": "asset-pack"}))]
             print("麻の葉 asset-pack", ids)
             ok &= "wagara-pattern-pack" in ids
