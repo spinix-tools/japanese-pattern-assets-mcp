@@ -1,13 +1,14 @@
 {
-  "catalog": "Spinix Tools – assets for AI agents (prototype, not published)",
-  "version": "0.1.1",
+  "catalog": "Japanese pattern and Japanese-themed assets for AI agents (Spinix Tools and other makers, link only)",
+  "version": "0.2.0",
   "checked": "2026-11-24",
   "maker": "spin xiv / Spinix Tools",
   "notes": [
     "Prices and URLs were checked on the public store pages on 2026-11-24. Prices can change; always open the store page before buying.",
     "ai_use follows the AI Use Label steps: each step is none / assist / mostly. 'none' means no generative AI in that step. It is the maker's self-declaration, not proof.",
     "This catalog does not sell anything itself. Paid items link to the store (itch.io or Gumroad), where the human buys.",
-    "uses lists what the item is made for (game-ui, background, web, print, pixel-art, calendar, planner, textile, packaging)."
+    "uses lists what the item is made for (game-ui, background, web, print, pixel-art, calendar, planner, textile, packaging).",
+    "Items by other makers are listed by link only. Files stay on the maker's page; follow the maker's license (some require credit)."
   ],
   "assets": [
     {
@@ -69,7 +70,8 @@
         "game-ui",
         "print",
         "textile"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "wagara-pattern-pack",
@@ -130,7 +132,8 @@
         "print",
         "textile",
         "packaging"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "wagara-pixel-sampler",
@@ -174,7 +177,8 @@
         "pixel-art",
         "game-ui",
         "background"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "japanese-ui-frames",
@@ -218,7 +222,8 @@
       "preview": "Indigo (seigaiha), Vermilion (asanoha), Matcha (kikko), Plum (uroko), Gold on black (sayagata), White on charcoal (kagome).",
       "uses": [
         "game-ui"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "japanese-ui-frames-free",
@@ -260,7 +265,8 @@
       "preview": "Indigo wave frames for panels and buttons.",
       "uses": [
         "game-ui"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "calendar-2027",
@@ -301,7 +307,8 @@
       "uses": [
         "print",
         "calendar"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "calendar-2027-free",
@@ -341,7 +348,8 @@
       "uses": [
         "print",
         "calendar"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "weekly-planner-2027",
@@ -382,7 +390,8 @@
       "uses": [
         "print",
         "planner"
-      ]
+      ],
+      "maker": "Spinix Tools"
     },
     {
       "id": "calendar-planner-set-2027",
@@ -423,7 +432,82 @@
         "print",
         "calendar",
         "planner"
-      ]
+      ],
+      "maker": "Spinix Tools"
+    },
+    {
+      "id": "rekkimaru-japanese-textures-32",
+      "title": "32 Pixel Art Japanese Themed Textures",
+      "maker": "Rekkimaru",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "pixel-art",
+        "textures",
+        "32x32",
+        "8-bit"
+      ],
+      "uses": [
+        "pixel-art",
+        "game-ui",
+        "background"
+      ],
+      "price": {
+        "amount": 0,
+        "currency": "USD",
+        "note": "free on itch.io"
+      },
+      "store": "itch.io",
+      "url": "https://rekkimaru.itch.io/32-pixel-art-japanese-themed-textures",
+      "license": {
+        "summary": "\"You may use the pack any way you like, for commercial or non-commercial use.\" (page text)",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": null,
+        "source": "itch.io page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "all": "none",
+        "statement": "itch.io page shows: Content — No generative AI was used."
+      },
+      "listing": "link only; files stay on the maker's page"
+    },
+    {
+      "id": "paulbarden-japanese-themed-tilesets",
+      "title": "Japanese-themed Tilesets (RPG Maker MV)",
+      "maker": "Paul Barden; credit also to Damian Gasinski aka Gassasin",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "jrpg",
+        "rpg-maker",
+        "tileset",
+        "16-bit",
+        "pixel-art"
+      ],
+      "uses": [
+        "game-ui",
+        "background",
+        "pixel-art"
+      ],
+      "price": {
+        "amount": 0,
+        "currency": "USD",
+        "note": "free on itch.io"
+      },
+      "store": "itch.io",
+      "url": "https://paulthepirateking.itch.io/japanese-themed-tilesets",
+      "license": {
+        "summary": "CC-BY 3.0; credit to \"Damian Gasinski aka Gassasin\" and Paul Barden (page text).",
+        "commercial": true,
+        "credit_required": true,
+        "redistribute_files": null,
+        "source": "itch.io page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "statement": "Unknown: the page (published 2020-04-01) has no AI disclosure line."
+      },
+      "listing": "link only; files stay on the maker's page"
     }
   ]
 }

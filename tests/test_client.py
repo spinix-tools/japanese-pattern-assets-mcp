@@ -54,6 +54,14 @@ async def main():
             print("no AI at all", res)
             ok &= res == []
 
+            res = payload(await s.call_tool("search_assets", {"query": "japanese textures", "no_ai_at_all": True}))
+            print("no AI at all, textures", [x["id"] for x in res])
+            ok &= [x["id"] for x in res] == ["rekkimaru-japanese-textures-32"]
+
+            lic2 = payload(await s.call_tool("get_license", {"asset_id": "paulbarden-japanese-themed-tilesets"}))
+            print("CC-BY credit", lic2.get("credit_required"))
+            ok &= lic2.get("credit_required") is True
+
             lic = payload(await s.call_tool("get_license", {"asset_id": "wagara-pixel-sampler"}))
             print("license sampler", lic.get("warning"))
             ok &= "warning" in lic

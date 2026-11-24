@@ -24,7 +24,8 @@ ASSETS = {a["id"]: a for a in CATALOG["assets"]}
 server = MCPServer(
     name="spinix-assets",
     instructions=(
-        "Catalog of Japanese-pattern assets (tiles, game UI frames, printables) by Spinix Tools. "
+        "Catalog of Japanese-pattern and Japanese-themed assets (tiles, game UI frames, textures, tilesets, printables) "
+        "by Spinix Tools and, link only, by other makers. "
         "Use search_assets to find items, get_license before using an item, get_ai_use when the user "
         "needs to know whether generative AI was used, and get_link to give the human the store page. "
         "Never claim an item was bought; paid items are bought by the human on the store page. "
@@ -38,9 +39,22 @@ def _words(text: str) -> list[str]:
 
 
 def _haystack(a: dict) -> str:
-    parts = [a.get("title", ""), a.get("title_ja", ""), a.get("kind", ""), a.get("contents", ""), a.get("preview", "")]
+    parts = [a.get("title", ""), a.get("title_ja", ""), a.get("kind", ""), a.get("contents", ""), a.get("preview", ""), a.get("maker", "")]
     parts += a.get("tags", []) + a.get("patterns", []) + a.get("formats", [])
     return " ".join(parts).lower()
+
+
+def _ai_image(a: dict) -> str:
+    ai = a.get("ai_use", {})
+    return ai.get("image") or ai.get("all") or "unknown"
+
+
+def _no_ai_anywhere(a: dict) -> bool:
+    ai = a.get("ai_use", {})
+    if ai.get("all") == "none":
+        return True
+    steps = {k: v for k, v in ai.items() if k not in ("statement", "itch_disclosure", "all")}
+    return bool(steps) and all(v == "none" for v in steps.values())
 
 
 def _summary(a: dict) -> dict:
@@ -51,7 +65,9 @@ def _summary(a: dict) -> dict:
         "price_jpy": a["price"]["amount"],
         "store": a["store"],
         "commercial_use": a["license"].get("commercial"),
-        "image_generation_ai": a["ai_use"].get("image", "unknown"),
+        "maker": a.get("maker", ""),
+        "image_generation_ai": _ai_image(a),
+        "credit_required": a["license"].get("credit_required"),
         "formats": a.get("formats", []),
         "uses": a.get("uses", []),
     }
@@ -76,7 +92,7 @@ def search_assets(
     commercial_only: only items whose license allows commercial use (unknown licenses are left out).
     no_ai_images: only items whose images were not made with image-generation AI.
     use: what it is for, e.g. "game-ui", "background", "web", "print", "pixel-art", "calendar", "planner".
-    no_ai_at_all: only items with no generative AI in any step (images, code, text). Stricter than no_ai_images.
+    no_ai_at_all: only items declared to use no generative AI in any step. Items with unknown AI use are left out.
     """
     words = _words(query)
     scored = []
@@ -87,11 +103,11 @@ def search_assets(
             continue
         if commercial_only and a["license"].get("commercial") is not True:
             continue
-        if no_ai_images and a["ai_use"].get("image") != "none":
+        if no_ai_images and _ai_image(a) != "none":
             continue
         if use and use.lower() not in [u.lower() for u in a.get("uses", [])]:
             continue
-        if no_ai_at_all and any(v in ("assist", "mostly") for k, v in a["ai_use"].items() if k not in ("statement", "itch_disclosure")):
+        if no_ai_at_all and not _no_ai_anywhere(a):
             continue
         hay = _haystack(a)
         score = sum(1 for w in words if w in hay)
