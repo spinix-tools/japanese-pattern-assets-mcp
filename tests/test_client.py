@@ -66,6 +66,14 @@ async def main():
             print("commercial wave ui", [x["id"] for x in res])
             ok &= "puppetbomb-ui-wave" not in [x["id"] for x in res]
 
+            for q in ["青海波", "seigaiha", "wave pattern"]:
+                ids = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": q, "commercial_only": True}))]
+                print("pattern name", q, ids[:3])
+                ok &= "wagara-pattern-pack" in ids
+            ids = [x["id"] for x in payload(await s.call_tool("search_assets", {"query": "麻の葉", "kind": "asset-pack"}))]
+            print("麻の葉 asset-pack", ids)
+            ok &= "wagara-pattern-pack" in ids
+
             lic = payload(await s.call_tool("get_license", {"asset_id": "wagara-pixel-sampler"}))
             print("license sampler", lic.get("warning"))
             ok &= "warning" in lic

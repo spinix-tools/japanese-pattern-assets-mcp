@@ -34,6 +34,28 @@ server = MCPServer(
 )
 
 
+# Same pattern, different names (Japanese, romaji, English). A query word that
+# matches any name in a group also searches for the other names in that group.
+PATTERN_NAMES = [
+    ["seigaiha", "青海波", "せいがいは", "wave", "waves"],
+    ["asanoha", "麻の葉", "あさのは", "hemp"],
+    ["shippo", "七宝", "しっぽう", "shippou"],
+    ["kikko", "亀甲", "きっこう", "tortoise", "hexagon", "hexagonal"],
+    ["kagome", "籠目", "かごめ", "basket"],
+    ["sayagata", "紗綾形", "さやがた", "key-fret", "fret"],
+    ["uroko", "鱗", "うろこ", "scales", "scale"],
+    ["ichimatsu", "市松", "いちまつ", "checker", "checkerboard", "checkered"],
+    ["yagasuri", "矢絣", "やがすり", "arrow", "arrows"],
+    ["wagara", "和柄", "わがら", "japanese-pattern"],
+]
+_NAME_INDEX = {name.lower(): group for group in PATTERN_NAMES for name in group}
+
+
+def _expand(words: list[str]) -> list[set[str]]:
+    """Each query word becomes a set of alternatives (itself plus its other names)."""
+    return [set(n.lower() for n in _NAME_INDEX.get(w, [w])) | {w} for w in words]
+
+
 def _words(text: str) -> list[str]:
     return [w for w in re.split(r"[^0-9a-zA-Z぀-ヿ一-鿿-]+", text.lower()) if w]
 
@@ -110,7 +132,7 @@ def search_assets(
         if no_ai_at_all and not _no_ai_anywhere(a):
             continue
         hay = _haystack(a)
-        score = sum(1 for w in words if w in hay)
+        score = sum(1 for alts in _expand(words) if any(alt in hay for alt in alts))
         if words and score == 0:
             continue
         scored.append((score, a))
