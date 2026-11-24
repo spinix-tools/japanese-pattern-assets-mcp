@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "japanese-pattern-assets-mcp"
-version = "0.2.2"
+version = "0.2.3"
 description = "MCP server: AI agents can search Japanese pattern assets (tiles, game UI frames, printables) with license and AI-use info."
 readme = "README.md"
 requires-python = ">=3.10"

@@ -11,6 +11,9 @@ import re
 from importlib import resources
 
 from mcp.server.mcpserver import MCPServer
+from mcp.types import ToolAnnotations
+
+READ_ONLY = ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=False)
 
 
 def load_catalog() -> dict:
@@ -95,7 +98,7 @@ def _summary(a: dict) -> dict:
     }
 
 
-@server.tool()
+@server.tool(title="Search assets", annotations=READ_ONLY)
 def search_assets(
     query: str,
     kind: str | None = None,
@@ -146,7 +149,7 @@ def _get(asset_id: str) -> dict:
     return ASSETS[asset_id]
 
 
-@server.tool()
+@server.tool(title="Get license", annotations=READ_ONLY)
 def get_license(asset_id: str) -> dict:
     """License of one item: commercial use, credit, redistribution, and where the wording came from."""
     a = _get(asset_id)
@@ -158,7 +161,7 @@ def get_license(asset_id: str) -> dict:
     return lic
 
 
-@server.tool()
+@server.tool(title="Get AI use", annotations=READ_ONLY)
 def get_ai_use(asset_id: str) -> dict:
     """Self-declared generative AI use, by step (none / assist / mostly). Not proof."""
     a = _get(asset_id)
@@ -168,7 +171,7 @@ def get_ai_use(asset_id: str) -> dict:
     return out
 
 
-@server.tool()
+@server.tool(title="Get store link", annotations=READ_ONLY)
 def get_link(asset_id: str) -> dict:
     """Store page for the human. Paid items are bought there by the human, not by the agent."""
     a = _get(asset_id)

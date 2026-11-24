@@ -27,7 +27,11 @@ async def main():
     async with stdio_client(params) as (r, w):
         async with ClientSession(r, w) as s:
             await s.initialize()
-            tools = sorted(t.name for t in (await s.list_tools()).tools)
+            listed = (await s.list_tools()).tools
+            tools = sorted(t.name for t in listed)
+            ann = {t.name: (t.title, getattr(t.annotations, "read_only_hint", None) if t.annotations else None) for t in listed}
+            print("annotations", ann)
+            ok &= all(v[0] and v[1] is True for v in ann.values())
             print("tools", tools)
             ok &= tools == ["get_ai_use", "get_license", "get_link", "search_assets"]
 

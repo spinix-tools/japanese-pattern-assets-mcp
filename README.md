@@ -4,9 +4,11 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.2.2 — catalog checked 2026-11-24. 13 items: 9 by Spinix Tools, and 4 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
+Version 0.2.3 — catalog checked 2026-11-24. 13 items: 9 by Spinix Tools, and 4 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
 
 ## Tools
+
+All four tools are read-only (annotated `readOnlyHint: true`).
 
 | Tool | What it does |
 | --- | --- |
@@ -85,6 +87,10 @@ python tests/test_client.py
 ## 日本語
 
 AI（Claude・Cursor など）が、和柄の素材（継ぎ目のないタイル・ゲームの UI の枠・印刷用のカレンダーなど）を探し、使う前に**ライセンス**・**AI の使用**（工程ごとの自己申告）・**置き場所**を確かめられる MCP サーバーです。このサーバーは何も売らず、ダウンロードもしません。無料の物はダウンロードのページを、有料の物は売り場（itch.io・Gumroad）のページを返し、買うかどうかは人が決めます。外への通信はしません。
+
+## Privacy Policy
+
+This server collects nothing. It runs on your computer, reads only the catalog file inside the package, makes no network requests, keeps no logs of your queries, and shares nothing with Spinix Tools or anyone else. What your AI client does with the results is governed by that client's own policy. Questions: open an issue on this repository.
 
 ## License
 
