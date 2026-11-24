@@ -67,7 +67,12 @@ Claude Desktop (`claude_desktop_config.json`):
 }
 ```
 
-Or with pip: `pip install git+https://github.com/spinix-tools/japanese-pattern-assets-mcp` then run `japanese-pattern-assets-mcp`.
+Or with pip:
+
+```bash
+pip install git+https://github.com/spinix-tools/japanese-pattern-assets-mcp
+japanese-pattern-assets-mcp
+```
 
 ## About the AI-use field
 
@@ -79,10 +84,7 @@ Some stores, game jams and asset bundles have their own AI rules. The field help
 
 ## Test
 
-```bash
-pip install -e .
-python tests/test_client.py
-```
+For development only: from a clone of this repository, install it in editable mode with pip (`pip install -e`, then a dot for the current folder) and run `python tests/test_client.py`. It starts the server over stdio and checks every tool.
 
 ## 日本語
 
