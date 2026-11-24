@@ -1,0 +1,12 @@
+{
+  "name": "spinix-tools",
+  "owner": { "name": "Spinix Tools" },
+  "description": "Plugins by Spinix Tools.",
+  "plugins": [
+    {
+      "name": "japanese-pattern-assets",
+      "source": "./plugins/japanese-pattern-assets",
+      "description": "Find Japanese pattern assets (seamless tiles, game UI frames, printables) and check license and AI use before using them. Runs locally, no network."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "japanese-pattern-assets",
+  "displayName": "Japanese Pattern Assets",
+  "version": "0.3.1",
+  "description": "Find Japanese pattern assets (seamless wagara tiles, game UI frames, textures, printables) and check each one's license and AI use before you use it.",
+  "author": {
+    "name": "Spinix Tools",
+    "url": "https://github.com/spinix-tools/japanese-pattern-assets-mcp"
+  },
+  "license": "MIT"
+}

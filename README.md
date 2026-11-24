@@ -4,7 +4,7 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.2.8 — price, link and license of every item re-checked on its store page on 2026-11-25. 14 items: 9 by Spinix Tools, and 5 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
+Version 0.2.9 — also a Claude Code plugin (see Install). Price, link and license of every item re-checked on its store page on 2026-11-25. 14 items: 9 by Spinix Tools, and 5 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
 
 ## Tools
 
@@ -73,6 +73,17 @@ Or with pip:
 pip install git+https://github.com/spinix-tools/japanese-pattern-assets-mcp
 japanese-pattern-assets-mcp
 ```
+
+### As a Claude Code plugin
+
+This repository is also a Claude Code plugin marketplace. The plugin bundles the same catalog and a small MCP server that uses only the Python standard library (no install step, no network). In Claude Code:
+
+```
+/plugin marketplace add spinix-tools/japanese-pattern-assets-mcp
+/plugin install japanese-pattern-assets@spinix-tools
+```
+
+The plugin lives in `plugins/japanese-pattern-assets/`; its catalog is a copy kept in step by `scripts/sync_plugin_catalog.py`.
 
 ## Without MCP (agents that can only read web pages)
 
