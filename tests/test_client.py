@@ -45,6 +45,15 @@ async def main():
             print("search ja", [x["id"] for x in res])
             ok &= len(res) >= 3
 
+            res = payload(await s.call_tool("search_assets", {"query": "", "use": "game-ui", "commercial_only": True}))
+            ids = sorted(x["id"] for x in res)
+            print("use game-ui", ids)
+            ok &= "japanese-ui-frames" in ids and "calendar-2027" not in ids
+
+            res = payload(await s.call_tool("search_assets", {"query": "pattern", "no_ai_at_all": True}))
+            print("no AI at all", res)
+            ok &= res == []
+
             lic = payload(await s.call_tool("get_license", {"asset_id": "wagara-pixel-sampler"}))
             print("license sampler", lic.get("warning"))
             ok &= "warning" in lic

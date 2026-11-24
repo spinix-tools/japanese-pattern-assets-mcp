@@ -4,13 +4,13 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.1.0 — catalog checked 2026-11-24. 9 items, all by Spinix Tools. Prices can change; the store page is always the source of truth.
+Version 0.1.1 — catalog checked 2026-11-24. 9 items, all by Spinix Tools. Prices can change; the store page is always the source of truth.
 
 ## Tools
 
 | Tool | What it does |
 | --- | --- |
-| `search_assets` | Search by words (English or Japanese). Filters: `kind` (tool / asset-pack / printable), `max_price_jpy` (0 = free only), `commercial_only`, `no_ai_images`. |
+| `search_assets` | Search by words (English or Japanese). Filters: `kind` (tool / asset-pack / printable), `use` (game-ui, background, web, print, pixel-art, calendar, planner), `max_price_jpy` (0 = free only), `commercial_only`, `no_ai_images` (no image-generation AI), `no_ai_at_all` (no generative AI in any step). |
 | `get_license` | Commercial use, credit, redistribution, and where the wording came from. Warns when a license still needs checking. |
 | `get_ai_use` | Generative AI use per step (`none` / `assist` / `mostly`), plus the maker's statement. Self-declaration, not proof. |
 | `get_link` | Store page, price, and how to get it. |
@@ -43,6 +43,8 @@ Or with pip: `pip install git+https://github.com/spinix-tools/japanese-pattern-a
 ## About the AI-use field
 
 Each item says, step by step, whether generative AI was used: images, code shipped in the item, behind-the-scenes code, text. For these items the patterns are drawn by code from circles, lines and polygons — no image-generation AI — and the code was written with help from an AI assistant (Claude). This README and the server were also written by Claude.
+
+Because the code for every current item was written with help from Claude, `no_ai_at_all` returns nothing today — an honest empty result, not an error.
 
 Some stores, game jams and asset bundles have their own AI rules. The field helps an agent filter, but it is the maker's self-declaration, not a certification, and not legal advice.
 

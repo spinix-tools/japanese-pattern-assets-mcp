@@ -53,6 +53,7 @@ def _summary(a: dict) -> dict:
         "commercial_use": a["license"].get("commercial"),
         "image_generation_ai": a["ai_use"].get("image", "unknown"),
         "formats": a.get("formats", []),
+        "uses": a.get("uses", []),
     }
 
 
@@ -63,6 +64,8 @@ def search_assets(
     max_price_jpy: int | None = None,
     commercial_only: bool = False,
     no_ai_images: bool = False,
+    use: str | None = None,
+    no_ai_at_all: bool = False,
     limit: int = 10,
 ) -> list[dict]:
     """Search the catalog.
@@ -72,6 +75,8 @@ def search_assets(
     max_price_jpy: 0 for free items only.
     commercial_only: only items whose license allows commercial use (unknown licenses are left out).
     no_ai_images: only items whose images were not made with image-generation AI.
+    use: what it is for, e.g. "game-ui", "background", "web", "print", "pixel-art", "calendar", "planner".
+    no_ai_at_all: only items with no generative AI in any step (images, code, text). Stricter than no_ai_images.
     """
     words = _words(query)
     scored = []
@@ -83,6 +88,10 @@ def search_assets(
         if commercial_only and a["license"].get("commercial") is not True:
             continue
         if no_ai_images and a["ai_use"].get("image") != "none":
+            continue
+        if use and use.lower() not in [u.lower() for u in a.get("uses", [])]:
+            continue
+        if no_ai_at_all and any(v in ("assist", "mostly") for k, v in a["ai_use"].items() if k not in ("statement", "itch_disclosure")):
             continue
         hay = _haystack(a)
         score = sum(1 for w in words if w in hay)
@@ -107,7 +116,7 @@ def get_license(asset_id: str) -> dict:
     lic["id"] = asset_id
     lic["checked"] = CATALOG["checked"]
     if lic.get("source") == "要確認":
-        lic["warning"] = "License not re-read on the live page. Ask the human to check the store page before use."
+        lic["warning"] = "License not confirmed on the store page. Ask the human to check it before use."
     return lic
 
 

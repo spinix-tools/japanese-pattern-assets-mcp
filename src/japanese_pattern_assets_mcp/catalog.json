@@ -1,12 +1,13 @@
 {
   "catalog": "Spinix Tools – assets for AI agents (prototype, not published)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "checked": "2026-11-24",
   "maker": "spin xiv / Spinix Tools",
   "notes": [
     "Prices and URLs were checked on the public store pages on 2026-11-24. Prices can change; always open the store page before buying.",
     "ai_use follows the AI Use Label steps: each step is none / assist / mostly. 'none' means no generative AI in that step. It is the maker's self-declaration, not proof.",
-    "This catalog does not sell anything itself. Paid items link to the store (itch.io or Gumroad), where the human buys."
+    "This catalog does not sell anything itself. Paid items link to the store (itch.io or Gumroad), where the human buys.",
+    "uses lists what the item is made for (game-ui, background, web, print, pixel-art, calendar, planner, textile, packaging)."
   ],
   "assets": [
     {
@@ -61,7 +62,14 @@
         "statement": "The patterns are drawn by code from geometry; no image-generation AI. The code and the page text were written with help from generative AI (Claude).",
         "itch_disclosure": "AI Assisted: Code, Text"
       },
-      "preview": "9 geometric Japanese patterns; colors, line width and size are adjustable; tiles are checked 3x3 for seams."
+      "preview": "9 geometric Japanese patterns; colors, line width and size are adjustable; tiles are checked 3x3 for seams.",
+      "uses": [
+        "background",
+        "web",
+        "game-ui",
+        "print",
+        "textile"
+      ]
     },
     {
       "id": "wagara-pattern-pack",
@@ -114,7 +122,15 @@
         "devhelp": "mostly",
         "statement": "Drawn by code from geometry; no image-generation AI. The code that draws them was written with help from generative AI (Claude)."
       },
-      "preview": "Seamless tiles; width is 1024 or 2048 px and the width:height ratio depends on the pattern."
+      "preview": "Seamless tiles; width is 1024 or 2048 px and the width:height ratio depends on the pattern.",
+      "uses": [
+        "background",
+        "web",
+        "game-ui",
+        "print",
+        "textile",
+        "packaging"
+      ]
     },
     {
       "id": "wagara-pixel-sampler",
@@ -153,7 +169,12 @@
         "devhelp": "mostly",
         "statement": "Drawn by code; no image-generation AI."
       },
-      "preview": "Small pixel tiles for games and pixel art."
+      "preview": "Small pixel tiles for games and pixel art.",
+      "uses": [
+        "pixel-art",
+        "game-ui",
+        "background"
+      ]
     },
     {
       "id": "japanese-ui-frames",
@@ -194,7 +215,10 @@
         "devhelp": "mostly",
         "statement": "Drawn in code from circles and lines; no image-generation AI. The code was written with help from an AI assistant (Claude)."
       },
-      "preview": "Indigo (seigaiha), Vermilion (asanoha), Matcha (kikko), Plum (uroko), Gold on black (sayagata), White on charcoal (kagome)."
+      "preview": "Indigo (seigaiha), Vermilion (asanoha), Matcha (kikko), Plum (uroko), Gold on black (sayagata), White on charcoal (kagome).",
+      "uses": [
+        "game-ui"
+      ]
     },
     {
       "id": "japanese-ui-frames-free",
@@ -233,7 +257,10 @@
         "devhelp": "mostly",
         "statement": "Drawn in code; no image-generation AI. Code written with help from Claude."
       },
-      "preview": "Indigo wave frames for panels and buttons."
+      "preview": "Indigo wave frames for panels and buttons.",
+      "uses": [
+        "game-ui"
+      ]
     },
     {
       "id": "calendar-2027",
@@ -270,7 +297,11 @@
         "devhelp": "mostly",
         "statement": "Patterns drawn in code from circles, lines and polygons; no image-generation AI. Code written with help from Claude."
       },
-      "preview": "A4 and US Letter, Sunday or Monday start, no holidays printed."
+      "preview": "A4 and US Letter, Sunday or Monday start, no holidays printed.",
+      "uses": [
+        "print",
+        "calendar"
+      ]
     },
     {
       "id": "calendar-2027-free",
@@ -306,7 +337,11 @@
         "devhelp": "mostly",
         "statement": "Drawn in code; no image-generation AI."
       },
-      "preview": "One page, seigaiha wave pattern, Sunday start."
+      "preview": "One page, seigaiha wave pattern, Sunday start.",
+      "uses": [
+        "print",
+        "calendar"
+      ]
     },
     {
       "id": "weekly-planner-2027",
@@ -343,7 +378,11 @@
         "devhelp": "mostly",
         "statement": "Drawn in code; no image-generation AI."
       },
-      "preview": "One page per week, Monday or Sunday start."
+      "preview": "One page per week, Monday or Sunday start.",
+      "uses": [
+        "print",
+        "planner"
+      ]
     },
     {
       "id": "calendar-planner-set-2027",
@@ -379,7 +418,12 @@
         "devhelp": "mostly",
         "statement": "Drawn in code; no image-generation AI."
       },
-      "preview": "Both the 2027 calendar and the weekly planner."
+      "preview": "Both the 2027 calendar and the weekly planner.",
+      "uses": [
+        "print",
+        "calendar",
+        "planner"
+      ]
     }
   ]
 }
