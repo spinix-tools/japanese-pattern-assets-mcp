@@ -1,0 +1,385 @@
+{
+  "catalog": "Spinix Tools – assets for AI agents (prototype, not published)",
+  "version": "0.1.0",
+  "checked": "2026-11-24",
+  "maker": "spin xiv / Spinix Tools",
+  "notes": [
+    "Prices and URLs were checked on the public store pages on 2026-11-24. Prices can change; always open the store page before buying.",
+    "ai_use follows the AI Use Label steps: each step is none / assist / mostly. 'none' means no generative AI in that step. It is the maker's self-declaration, not proof.",
+    "This catalog does not sell anything itself. Paid items link to the store (itch.io or Gumroad), where the human buys."
+  ],
+  "assets": [
+    {
+      "id": "wagara-tile-maker",
+      "title": "Wagara Tile Maker – seamless Japanese patterns (SVG/PNG)",
+      "title_ja": "和柄タイルメーカー",
+      "kind": "tool",
+      "tags": [
+        "japanese",
+        "pattern",
+        "seamless",
+        "tile",
+        "svg",
+        "png",
+        "background",
+        "wagara"
+      ],
+      "patterns": [
+        "seigaiha",
+        "asanoha",
+        "shippo",
+        "kikko",
+        "kagome",
+        "sayagata",
+        "uroko",
+        "ichimatsu",
+        "yagasuri"
+      ],
+      "formats": [
+        "browser tool",
+        "SVG export",
+        "PNG export"
+      ],
+      "price": {
+        "amount": 0,
+        "currency": "JPY",
+        "note": "free browser tool"
+      },
+      "store": "itch.io",
+      "url": "https://spinxix.itch.io/wagara-tile-maker",
+      "license": {
+        "summary": "Exported tiles are free to use, commercial or not. No credit needed.",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "itch.io project page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "code": "mostly",
+        "text": "assist",
+        "statement": "The patterns are drawn by code from geometry; no image-generation AI. The code and the page text were written with help from generative AI (Claude).",
+        "itch_disclosure": "AI Assisted: Code, Text"
+      },
+      "preview": "9 geometric Japanese patterns; colors, line width and size are adjustable; tiles are checked 3x3 for seams."
+    },
+    {
+      "id": "wagara-pattern-pack",
+      "title": "Wagara Pattern Pack v1.1",
+      "title_ja": "和柄パターンパック v1.1",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "pattern",
+        "seamless",
+        "tile",
+        "svg",
+        "png",
+        "background",
+        "wagara"
+      ],
+      "patterns": [
+        "seigaiha",
+        "asanoha",
+        "shippo",
+        "kikko",
+        "kagome",
+        "sayagata",
+        "uroko",
+        "ichimatsu",
+        "yagasuri"
+      ],
+      "formats": [
+        "SVG",
+        "PNG 1024 px wide",
+        "PNG 2048 px wide"
+      ],
+      "contents": "9 patterns x 6 colorways: 54 SVG tiles plus PNG, README and a preview sheet",
+      "price": {
+        "amount": 300,
+        "currency": "JPY",
+        "note": "paid download on the Wagara Tile Maker page"
+      },
+      "store": "itch.io",
+      "url": "https://spinxix.itch.io/wagara-tile-maker",
+      "license": {
+        "summary": "Use in personal and commercial work (games, apps, web, print, products). No credit needed. Do not resell or redistribute the files themselves.",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "itch.io project page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn by code from geometry; no image-generation AI. The code that draws them was written with help from generative AI (Claude)."
+      },
+      "preview": "Seamless tiles; width is 1024 or 2048 px and the width:height ratio depends on the pattern."
+    },
+    {
+      "id": "wagara-pixel-sampler",
+      "title": "Wagara Pixel Sampler v1.1",
+      "title_ja": "和柄ピクセルサンプラー v1.1",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "pattern",
+        "pixel-art",
+        "seamless",
+        "tile",
+        "1-bit"
+      ],
+      "formats": [
+        "PNG 32 px",
+        "PNG 64 px"
+      ],
+      "contents": "Seamless pixel tiles at 32 px (8 patterns) and 64 px (9 patterns), 1-bit and 2-color versions",
+      "price": {
+        "amount": 0,
+        "currency": "JPY",
+        "note": "free download on the Wagara Tile Maker page"
+      },
+      "store": "itch.io",
+      "url": "https://spinxix.itch.io/wagara-tile-maker",
+      "license": {
+        "summary": "Requires check: the itch.io page describes the free sampler but gives no license line for it (checked 2026-11-24). The README in the download was not opened.",
+        "commercial": null,
+        "credit_required": null,
+        "redistribute_files": null,
+        "source": "要確認"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn by code; no image-generation AI."
+      },
+      "preview": "Small pixel tiles for games and pixel art."
+    },
+    {
+      "id": "japanese-ui-frames",
+      "title": "Japanese Pattern UI Frames – 9-slice Panels, Buttons & Slots for Games",
+      "title_ja": "和柄の UI の枠",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "ui",
+        "9-slice",
+        "game-ui",
+        "frame",
+        "panel",
+        "button",
+        "godot",
+        "unity"
+      ],
+      "formats": [
+        "PNG",
+        "SVG"
+      ],
+      "contents": "10 pieces (panel, title bar, buttons, slots, tooltip and more), 6 colors, 3 sizes plus SVG, 9-slice margins listed",
+      "price": {
+        "amount": 600,
+        "currency": "JPY"
+      },
+      "store": "Gumroad",
+      "url": "https://spinix0.gumroad.com/l/ui-frames",
+      "license": {
+        "summary": "Use them in your own games and apps, free or commercial. Credit is welcome but not required. Please do not resell or share the files as an asset pack.",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "Gumroad page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn in code from circles and lines; no image-generation AI. The code was written with help from an AI assistant (Claude)."
+      },
+      "preview": "Indigo (seigaiha), Vermilion (asanoha), Matcha (kikko), Plum (uroko), Gold on black (sayagata), White on charcoal (kagome)."
+    },
+    {
+      "id": "japanese-ui-frames-free",
+      "title": "Free Japanese Pattern UI Frames – Indigo Sample",
+      "title_ja": "和柄の UI の枠（無料の見本・藍）",
+      "kind": "asset-pack",
+      "tags": [
+        "japanese",
+        "ui",
+        "9-slice",
+        "game-ui",
+        "frame",
+        "free"
+      ],
+      "formats": [
+        "PNG",
+        "SVG"
+      ],
+      "contents": "Indigo (seigaiha) color, all 10 pieces in M and L sizes plus SVG, README with 9-slice margins",
+      "price": {
+        "amount": 0,
+        "currency": "JPY",
+        "note": "pay what you want, 0 allowed"
+      },
+      "store": "Gumroad",
+      "url": "https://spinix0.gumroad.com/l/free-ui-frames",
+      "license": {
+        "summary": "Free for your own games, free or commercial. Please do not resell or share the files as an asset pack.",
+        "commercial": true,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "Gumroad page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn in code; no image-generation AI. Code written with help from Claude."
+      },
+      "preview": "Indigo wave frames for panels and buttons."
+    },
+    {
+      "id": "calendar-2027",
+      "title": "2027 Printable Calendar – Japanese Patterns (A4 & US Letter)",
+      "title_ja": "2027 年カレンダー（和柄）",
+      "kind": "printable",
+      "tags": [
+        "calendar",
+        "2027",
+        "printable",
+        "japanese",
+        "pattern",
+        "pdf"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "contents": "12 PDF files, 13 pages each: a year-at-a-glance page plus monthly pages",
+      "price": {
+        "amount": 600,
+        "currency": "JPY"
+      },
+      "store": "Gumroad",
+      "url": "https://spinix0.gumroad.com/l/calendar-2027",
+      "license": {
+        "summary": "Print as many copies as you like for yourself, your family, your desk or your classroom. Do not resell or share the PDF files.",
+        "commercial": false,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "Gumroad page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Patterns drawn in code from circles, lines and polygons; no image-generation AI. Code written with help from Claude."
+      },
+      "preview": "A4 and US Letter, Sunday or Monday start, no holidays printed."
+    },
+    {
+      "id": "calendar-2027-free",
+      "title": "Free 2027 Year at a Glance – Japanese Wave Pattern",
+      "title_ja": "2027 年の1枚カレンダー（無料）",
+      "kind": "printable",
+      "tags": [
+        "calendar",
+        "2027",
+        "printable",
+        "free",
+        "seigaiha"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "price": {
+        "amount": 0,
+        "currency": "JPY",
+        "note": "pay what you want, 0 allowed"
+      },
+      "store": "Gumroad",
+      "url": "https://spinix0.gumroad.com/l/free-calendar-2027",
+      "license": {
+        "summary": "Free for personal and classroom use.",
+        "commercial": false,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "Gumroad page description, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn in code; no image-generation AI."
+      },
+      "preview": "One page, seigaiha wave pattern, Sunday start."
+    },
+    {
+      "id": "weekly-planner-2027",
+      "title": "2027 Weekly Planner – Japanese Patterns (A4 & US Letter)",
+      "title_ja": "2027 年の週間プランナー（和柄）",
+      "kind": "printable",
+      "tags": [
+        "planner",
+        "2027",
+        "weekly",
+        "printable",
+        "japanese",
+        "pattern",
+        "pdf"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "price": {
+        "amount": 600,
+        "currency": "JPY"
+      },
+      "store": "Gumroad",
+      "url": "https://spinix0.gumroad.com/l/weekly-planner-2027",
+      "license": {
+        "summary": "Print as many copies as you like for yourself, your family, your desk or your classroom. Please do not resell or share the PDF files.",
+        "commercial": false,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "Gumroad page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn in code; no image-generation AI."
+      },
+      "preview": "One page per week, Monday or Sunday start."
+    },
+    {
+      "id": "calendar-planner-set-2027",
+      "title": "2027 Calendar + Weekly Planner Set – Japanese Patterns",
+      "title_ja": "2027 年カレンダー＋週間プランナーのセット",
+      "kind": "printable",
+      "tags": [
+        "calendar",
+        "planner",
+        "2027",
+        "bundle",
+        "printable",
+        "japanese"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "price": {
+        "amount": 900,
+        "currency": "JPY"
+      },
+      "store": "Gumroad",
+      "url": "https://spinix0.gumroad.com/l/calendar-planner-2027-set",
+      "license": {
+        "summary": "Print as many copies as you like for yourself, your family, your desk or your classroom. Please do not resell or share the PDF files.",
+        "commercial": false,
+        "credit_required": false,
+        "redistribute_files": false,
+        "source": "Gumroad page, checked 2026-11-24"
+      },
+      "ai_use": {
+        "image": "none",
+        "devhelp": "mostly",
+        "statement": "Drawn in code; no image-generation AI."
+      },
+      "preview": "Both the 2027 calendar and the weekly planner."
+    }
+  ]
+}
