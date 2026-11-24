@@ -1,10 +1,10 @@
 {
   "catalog": "Japanese pattern and Japanese-themed assets for AI agents (Spinix Tools and other makers, link only)",
-  "version": "0.2.5",
-  "checked": "2026-11-24",
+  "version": "0.2.8",
+  "checked": "2026-11-25",
   "maker": "spin xiv / Spinix Tools",
   "notes": [
-    "Prices and URLs were checked on the public store pages on 2026-11-24. Prices can change; always open the store page before buying.",
+    "Prices, URLs and license wording were checked on the public store pages on 2026-11-24 and again on 2026-11-25 (the AI Disclosure field of the itch.io pages too). Prices can change; always open the store page before buying.",
     "ai_use follows the AI Use Label steps: each step is none / assist / mostly. 'none' means no generative AI in that step. It is the maker's self-declaration, not proof.",
     "This catalog does not sell anything itself. Paid items link to the store (itch.io or Gumroad), where the human buys.",
     "uses lists what the item is made for (game-ui, background, web, print, pixel-art, calendar, planner, textile, packaging).",
@@ -212,7 +212,7 @@
         "commercial": true,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "Gumroad page, checked 2026-11-24"
+        "source": "Gumroad page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -255,7 +255,7 @@
         "commercial": true,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "Gumroad page, checked 2026-11-24"
+        "source": "Gumroad page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -296,7 +296,7 @@
         "commercial": false,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "Gumroad page, checked 2026-11-24"
+        "source": "Gumroad page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -337,7 +337,7 @@
         "commercial": false,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "Gumroad page description, checked 2026-11-24"
+        "source": "Gumroad page description, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -379,7 +379,7 @@
         "commercial": false,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "Gumroad page, checked 2026-11-24"
+        "source": "Gumroad page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",
@@ -420,7 +420,7 @@
         "commercial": false,
         "credit_required": false,
         "redistribute_files": false,
-        "source": "Gumroad page, checked 2026-11-24"
+        "source": "Gumroad page, checked 2026-11-24 and 2026-11-25"
       },
       "ai_use": {
         "image": "none",

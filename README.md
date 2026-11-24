@@ -4,7 +4,7 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.2.7 — catalog checked 2026-11-24/25. 14 items: 9 by Spinix Tools, and 5 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
+Version 0.2.8 — price, link and license of every item re-checked on its store page on 2026-11-25. 14 items: 9 by Spinix Tools, and 5 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
 
 ## Tools
 
@@ -74,6 +74,14 @@ pip install git+https://github.com/spinix-tools/japanese-pattern-assets-mcp
 japanese-pattern-assets-mcp
 ```
 
+## Without MCP (agents that can only read web pages)
+
+The whole catalog is one JSON file, so an agent that can fetch a web page but cannot run an MCP server can read it directly:
+
+https://raw.githubusercontent.com/spinix-tools/japanese-pattern-assets-mcp/main/src/japanese_pattern_assets_mcp/catalog.json
+
+It is the same data the server uses, from the `main` branch (always the latest version). Each item has `price`, `url`, `license` (with `source`: where the wording came from) and `ai_use`. A `null` or missing value means unknown, not "no". The filters and the pattern-name synonyms (青海波 / seigaiha / wave) live in the server, so without it the agent has to apply them itself.
+
 ## About the AI-use field
 
 Each item says, step by step, whether generative AI was used: images, code shipped in the item, behind-the-scenes code, text. For the Spinix Tools items the patterns are drawn by code from circles, lines and polygons — no image-generation AI — and the code was written with help from an AI assistant (Claude). This README and the server were also written by Claude.
@@ -89,6 +97,8 @@ For development only: from a clone of this repository, install it in editable mo
 ## 日本語
 
 AI（Claude・Cursor など）が、和柄の素材（継ぎ目のないタイル・ゲームの UI の枠・印刷用のカレンダーなど）を探し、使う前に**ライセンス**・**AI の使用**（工程ごとの自己申告）・**置き場所**を確かめられる MCP サーバーです。このサーバーは何も売らず、ダウンロードもしません。無料の物はダウンロードのページを、有料の物は売り場（itch.io・Gumroad）のページを返し、買うかどうかは人が決めます。外への通信はしません。
+
+MCP を使えない AI（ウェブのページを読めるだけの AI）は、一覧の JSON をそのまま読めます：https://raw.githubusercontent.com/spinix-tools/japanese-pattern-assets-mcp/main/src/japanese_pattern_assets_mcp/catalog.json（`main` の最新版。`null` や欄が無いのは「分からない」で、「なし」ではありません）。
 
 ## Privacy Policy
 
