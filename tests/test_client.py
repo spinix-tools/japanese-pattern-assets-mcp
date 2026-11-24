@@ -66,6 +66,17 @@ async def main():
             print("CC-BY credit", lic2.get("credit_required"))
             ok &= lic2.get("credit_required") is True
 
+            res = payload(await s.call_tool("search_assets", {"query": "japanese textures tilesets", "no_credit_only": True}))
+            ids = [x["id"] for x in res]
+            print("no credit needed", ids)
+            ok &= "rekkimaru-japanese-textures-32" in ids
+            ok &= "paulbarden-japanese-themed-tilesets" not in ids and "phantomlucy-stylized-japanese-textures" not in ids
+            ok &= "puppetbomb-ui-wave" not in [x["id"] for x in payload(await s.call_tool("search_assets", {"query": "ui wave", "no_credit_only": True}))]
+
+            res = payload(await s.call_tool("search_assets", {"query": "japanese", "max_price_jpy": 0}))
+            print("free only", [x["id"] for x in res][:6])
+            ok &= all(x["price"]["amount"] == 0 for x in res)
+
             res = payload(await s.call_tool("search_assets", {"query": "wave ui", "commercial_only": True}))
             print("commercial wave ui", [x["id"] for x in res])
             ok &= "puppetbomb-ui-wave" not in [x["id"] for x in res]

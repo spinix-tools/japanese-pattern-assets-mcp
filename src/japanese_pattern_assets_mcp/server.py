@@ -87,7 +87,9 @@ def _summary(a: dict) -> dict:
         "id": a["id"],
         "title": a["title"],
         "kind": a["kind"],
-        "price_jpy": a["price"]["amount"],
+        "price": {"amount": a["price"]["amount"], "currency": a["price"].get("currency")},
+        # price_jpy: kept for older clients; None when the price is in another currency and not free
+        "price_jpy": a["price"]["amount"] if (a["price"].get("currency") == "JPY" or a["price"]["amount"] == 0) else None,
         "store": a["store"],
         "commercial_use": a["license"].get("commercial"),
         "maker": a.get("maker", ""),
@@ -107,26 +109,35 @@ def search_assets(
     no_ai_images: bool = False,
     use: str | None = None,
     no_ai_at_all: bool = False,
+    no_credit_only: bool = False,
     limit: int = 10,
 ) -> list[dict]:
     """Search the catalog.
 
     query: words to match (English or Japanese), e.g. "seamless japanese pattern" or "9-slice ui".
     kind: "tool", "asset-pack" or "printable" to narrow.
-    max_price_jpy: 0 for free items only.
+    max_price_jpy: 0 for free items only. Prices in other currencies are not converted: with a limit, only their free items pass.
     commercial_only: only items whose license allows commercial use (unknown licenses are left out).
     no_ai_images: only items whose images were not made with image-generation AI.
     use: what it is for, e.g. "game-ui", "background", "web", "print", "pixel-art", "calendar", "planner".
     no_ai_at_all: only items declared to use no generative AI in any step. Items with unknown AI use are left out.
+    no_credit_only: only items whose license does not require credit (attribution). Items that require or request credit, or whose credit rule is unknown, are left out.
     """
     words = _words(query)
     scored = []
     for a in CATALOG["assets"]:
         if kind and a["kind"] != kind:
             continue
-        if max_price_jpy is not None and a["price"]["amount"] > max_price_jpy:
-            continue
+        if max_price_jpy is not None:
+            price = a["price"]
+            if price.get("currency") == "JPY":
+                if price["amount"] > max_price_jpy:
+                    continue
+            elif price["amount"] > 0:  # not converted; with a price limit only free ones pass
+                continue
         if commercial_only and a["license"].get("commercial") is not True:
+            continue
+        if no_credit_only and a["license"].get("credit_required") is not False:
             continue
         if no_ai_images and _ai_image(a) != "none":
             continue
