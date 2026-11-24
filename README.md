@@ -17,6 +17,33 @@ Version 0.2.0 — catalog checked 2026-11-24. 11 items: 9 by Spinix Tools, and 2
 
 Example prompts: "Find a seamless Japanese wave pattern I can use commercially, no AI-generated images." / 「商用 OK の和柄の背景を探して。画像に生成 AI を使っていない物だけ」
 
+## Example
+
+Request to an agent: "I need Japanese-pattern UI frames for my Godot game. Commercial use, no AI-generated images."
+These are real calls to v0.2.0 (run on 2026-11-24); search results are shortened to a few fields.
+
+1. `search_assets {"query": "japanese frame", "use": "game-ui", "commercial_only": true, "no_ai_images": true}`
+   returns 5 items, free first:
+
+   | id | price (JPY) | store | maker |
+   | --- | --- | --- | --- |
+   | japanese-ui-frames-free | 0 | Gumroad | Spinix Tools |
+   | japanese-ui-frames | 600 | Gumroad | Spinix Tools |
+   | wagara-tile-maker | 0 | itch.io | Spinix Tools |
+   | rekkimaru-japanese-textures-32 | 0 | itch.io | Rekkimaru |
+   | wagara-pattern-pack | 300 | itch.io | Spinix Tools |
+
+2. `get_license {"asset_id": "japanese-ui-frames-free"}`
+   → `"Free for your own games, free or commercial. Please do not resell or share the files as an asset pack."`, `commercial: true`, `credit_required: false`, source `Gumroad page, checked 2026-11-24`.
+
+3. `get_ai_use {"asset_id": "japanese-ui-frames-free"}`
+   → `image: none`, `devhelp: mostly`, `"Drawn in code; no image-generation AI. Code written with help from Claude."` (self-declaration, not a certification).
+
+4. `get_link {"asset_id": "japanese-ui-frames-free"}`
+   → `https://spinix0.gumroad.com/l/free-ui-frames`, price 0 JPY (pay what you want), `"Free: download from the store page."`
+
+The agent then tells the human where to download it. For the paid 6-color pack, `get_link` returns the store page and the human decides whether to buy.
+
 ## Install
 
 Requires Python 3.10+.
