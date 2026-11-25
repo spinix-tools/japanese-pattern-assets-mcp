@@ -1,5 +1,7 @@
 # Japanese Pattern Assets MCP
 
+[![spinix-tools/japanese-pattern-assets-mcp MCP server](https://glama.ai/mcp/servers/spinix-tools/japanese-pattern-assets-mcp/badges/score.svg)](https://glama.ai/mcp/servers/spinix-tools/japanese-pattern-assets-mcp)
+
 An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japanese pattern assets — seamless tiles, game UI frames and printables — and check, before using them, the **license**, the **AI use** (self-declared, by step) and **where to get them**.
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
