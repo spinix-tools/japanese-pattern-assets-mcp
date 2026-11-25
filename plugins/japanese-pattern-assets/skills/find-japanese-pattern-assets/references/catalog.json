@@ -1,6 +1,6 @@
 {
   "catalog": "Japanese pattern and Japanese-themed assets for AI agents (Spinix Tools and other makers, link only)",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "checked": "2026-11-25",
   "maker": "spin xiv / Spinix Tools",
   "notes": [
@@ -8,7 +8,8 @@
     "ai_use follows the AI Use Label steps: each step is none / assist / mostly. 'none' means no generative AI in that step. It is the maker's self-declaration, not proof.",
     "This catalog does not sell anything itself. Paid items link to the store (itch.io or Gumroad), where the human buys.",
     "uses lists what the item is made for (game-ui, background, web, print, pixel-art, calendar, planner, textile, packaging).",
-    "Items by other makers are listed by link only. Files stay on the maker's page; follow the maker's license (some require credit)."
+    "Items by other makers are listed by link only. Files stay on the maker's page; follow the maker's license (some require credit).",
+    "On itch.io search, the 'No AI' filter (facet no-ai) leaves out every item with an AI disclosure, including items whose disclosure is only 'AI Assisted: Code, Text' (observed 2026-11-25 with a search for 'wagara'). The ai_use steps here say more than itch's yes/no."
   ],
   "assets": [
     {

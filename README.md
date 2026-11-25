@@ -4,7 +4,7 @@ An MCP server that lets AI agents (Claude, Cursor, Codex and others) find Japane
 
 It never sells or downloads anything by itself. Free items point to their download page; paid items point to the store page (itch.io or Gumroad), where the human decides and buys. It makes no network calls: the catalog is a JSON file inside the package.
 
-Version 0.2.9 — also a Claude Code plugin (see Install). Price, link and license of every item re-checked on its store page on 2026-11-25. 14 items: 9 by Spinix Tools, and 5 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
+Version 0.2.10 — also a Claude Code plugin (see Install). Price, link and license of every item re-checked on its store page on 2026-11-25. 14 items: 9 by Spinix Tools, and 5 free Japanese-themed packs by other makers, listed by link only (files stay on the maker's page; follow the maker's license — some require credit, one is non-commercial only). Prices can change; the store page is always the source of truth.
 
 ## Tools
 
@@ -98,6 +98,8 @@ It is the same data the server uses, from the `main` branch (always the latest v
 Each item says, step by step, whether generative AI was used: images, code shipped in the item, behind-the-scenes code, text. For the Spinix Tools items the patterns are drawn by code from circles, lines and polygons — no image-generation AI — and the code was written with help from an AI assistant (Claude). This README and the server were also written by Claude.
 
 `no_ai_at_all` returns only items declared to use no generative AI in any step; the Spinix Tools items are left out because their code was written with Claude, and items with no AI information (older pages) count as unknown and are left out too.
+
+On itch.io, the search filter "No AI" leaves out every item with an AI disclosure, even one that only says "AI Assisted: Code, Text" (seen on 2026-11-25), so the Spinix Tools items do not appear there. The step-by-step field here shows what that yes/no cannot.
 
 Some stores, game jams and asset bundles have their own AI rules. The field helps an agent filter, but it is the maker's self-declaration, not a certification, and not legal advice.
 

@@ -16,7 +16,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 CATALOG_PATH = os.path.join(HERE, "skills", "find-japanese-pattern-assets", "references", "catalog.json")
 SERVER_NAME = "japanese-pattern-assets"
-SERVER_VERSION = "0.3.1"
+SERVER_VERSION = "0.3.2"
 SUPPORTED_PROTOCOLS = ["2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"]
 
 with open(CATALOG_PATH, encoding="utf-8") as f:
